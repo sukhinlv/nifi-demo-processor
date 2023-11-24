@@ -22,7 +22,7 @@ import java.util.Set;
 import static java.util.Objects.nonNull;
 
 /**
- * Демонстрационный процессор Nifi, показывающий процесс создания процессора.
+ * Sample of custom NiFi processor.
  */
 @Tags("nifi--demo-processor")
 @CapabilityDescription("Demonstrates custom processor creation")
@@ -110,7 +110,7 @@ public class DemoProcessor extends AbstractProcessor {
                 content = new String(is.readAllBytes());
             }
 
-            // TODO использовать или удалить инициализацию connection
+            // TODO use or delete "connection" variable
             String newContent = content.length() > 100 ? content.substring(0, 100) : content;
 
             newFlowFile = session.create();
